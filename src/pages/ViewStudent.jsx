@@ -23,7 +23,7 @@ function ViewStudent() {
         
     if(cookies.jwt && user.role=="Admin"){
         try{
-                const { data } = await axios.get('http://localhost:8000/admin/viewStudent',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewStudent',
                 {
                     withCredentials: true,
                 }); 
@@ -56,7 +56,7 @@ function ViewStudent() {
       if(window.confirm('Are you sure you want to delete Student '+item.first_name+' ?')){
       let id = item.roll_no;
       try{
-        const { data } = await axios.delete(`http://localhost:8000/admin/deleteStudent/${id}`,
+        const { data } = await axios.delete(`https://hvs-backend.onrender.com/admin/deleteStudent/${id}`,
         {
             withCredentials: true,
         }); 
