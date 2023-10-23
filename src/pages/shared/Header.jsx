@@ -23,7 +23,7 @@ function Header({sendDataToParent}) {
         navigate('/login');
       }
       const { data } = await axios.post(
-        "http://localhost:8000/user",
+        "https://hvs-backend.onrender.com/user",
         {cookies:cookies},
         { withCredentials: true }
       );
