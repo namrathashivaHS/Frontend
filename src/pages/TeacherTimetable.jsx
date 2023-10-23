@@ -22,7 +22,7 @@ function TeacherTimeTable() {
   const handleSubmit = async() => {
     //e.preventDefault();
     try{
-       const { data } = await axios.get("http://localhost:8000/teacher/timeTable",
+       const { data } = await axios.get("https://hvs-backend.onrender.com/teacher/timeTable",
        {
         params:{
             class_std,
