@@ -24,7 +24,7 @@ function StudentProfile () {
         const email=user.email;
         try {
             const { data } =await axios.get(
-                "http://localhost:8000/student/profile",
+                "https://hvs-backend.onrender.com/student/profile",
                 {
                   params:{
                     email:email,
