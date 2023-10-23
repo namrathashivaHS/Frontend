@@ -25,7 +25,7 @@ function ChangePassword() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
-        let { data } = await axios.post("http://localhost:8000/changePassword",
+        let { data } = await axios.post("https://hvs-backend.onrender.com/changePassword",
         {
             ...formData,
         },
