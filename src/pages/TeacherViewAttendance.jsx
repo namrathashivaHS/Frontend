@@ -29,7 +29,7 @@ function TeacherViewAttendance() {
     const fetchAttendance=async()=>{
     if(cookies.jwt && user.role=="Teacher"){
         try{
-                const { data } = await axios.get('http://localhost:8000/teacher/viewAttendance',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/teacher/viewAttendance',
                 {
                     params:{
                         cls:selectedClass,
