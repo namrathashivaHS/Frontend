@@ -62,7 +62,7 @@ function TeacherEditProgressReport() {
   }
     const editData=async(user)=>{
     try{
-        let { data } = await axios.put(`http://localhost:8000/teacher/editProgressReport/${studentid}/${test_type}`,
+        let { data } = await axios.put(`https://hvs-backend.onrender.com/teacher/editProgressReport/${studentid}/${test_type}`,
         {
             ...formData,
             email:user.email
