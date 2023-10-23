@@ -31,7 +31,7 @@ function ParentsViewProgressReport() {
         const role = user.role;
        
         try{
-            const { data } = await axios.get('http://localhost:8000/parents/viewProgressReport',
+            const { data } = await axios.get('https://hvs-backend.onrender.com/parents/viewProgressReport',
             {
                 params:{
                     email,
