@@ -86,7 +86,7 @@ function StaffRegistration() {
     // Handle form submission here, you can access the form data in 'formData'
     if(validateForm()){
     try{
-        let { data } = await axios.post("http://localhost:8000/admin/addStaff",
+        let { data } = await axios.post("https://hvs-backend.onrender.com/admin/addStaff",
     {
         ...formData,
     },{withCredentials:true});
