@@ -22,7 +22,7 @@ function ViewAttendance() {
         
     if(cookies.jwt && user.role=="Parents"){
         try{
-                const { data } = await axios.get('http://localhost:8000/parents/attendance',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/parents/attendance',
                 {
                     params:{
                         email:user.email,
