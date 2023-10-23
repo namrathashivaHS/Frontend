@@ -36,7 +36,7 @@ function ParentsUpdation() {
 
   const editData = async(e) => {
     try{
-        let { data } = await axios.put(`http://localhost:8000/admin/editParents/${id}`,{
+        let { data } = await axios.put(`https://hvs-backend.onrender.com/admin/editParents/${id}`,{
             ...formData,
         },{withCredentials:true});
         const { success, message, ModifiedData, pare } = data;
