@@ -21,7 +21,7 @@ function StudentAttendance() {
         const email=user.email;
         console.log(email);
         try{
-                const { data } = await axios.get('http://localhost:8000/student/attendance',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/student/attendance',
                 {
                     params:{
                         email:email,
