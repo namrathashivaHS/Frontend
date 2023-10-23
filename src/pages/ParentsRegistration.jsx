@@ -65,7 +65,7 @@ function ParentsRegistration() {
     e.preventDefault();
     // Handle form submission here, you can access the form data in 'formData'
     try{
-        let { data } = await axios.post("http://localhost:8000/admin/addParents",
+        let { data } = await axios.post("https://hvs-backend.onrender.com/admin/addParents",
     {
         ...formData,
     },{withCredentials:true});
