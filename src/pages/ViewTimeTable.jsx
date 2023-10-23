@@ -24,7 +24,7 @@ function ViewTimeTable() {
   const handleSubmit = async() => {
     //e.preventDefault();
     try{
-       const { data } = await axios.get("http://localhost:8000/admin/timeTable",
+       const { data } = await axios.get("https://hvs-backend.onrender.com/admin/timeTable",
        {
         params:{
             class_std,
@@ -54,7 +54,7 @@ function ViewTimeTable() {
       if(flag){
       if(window.confirm('Are you sure you want to delete time table of '+class_std+' ?')){
       try{
-        const { data } = await axios.delete(`http://localhost:8000/admin/deleteTimeTable/${class_std}`,
+        const { data } = await axios.delete(`https://hvs-backend.onrender.com/admin/deleteTimeTable/${class_std}`,
         {withCredentials:true}
         );
 
