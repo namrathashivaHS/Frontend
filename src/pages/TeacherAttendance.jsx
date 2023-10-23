@@ -58,7 +58,7 @@ function TeacherAttendance() {
     if(students.length===attendanceData.length){
     try {
       // Make an API request to submit attendance data
-      const { data } = await axios.post('http://localhost:8000/teacher/attendance', {
+      const { data } = await axios.post('https://hvs-backend.onrender.com/teacher/attendance', {
         date: selectedDate,
         attendanceData: attendanceData,
         email:user.email,
@@ -81,7 +81,7 @@ function TeacherAttendance() {
     
     try {
       // Make an API request to fetch students based on the selected class
-      const { data } = await axios.get("http://localhost:8000/teacher/studentList",
+      const { data } = await axios.get("https://hvs-backend.onrender.com/teacher/studentList",
                         {
                             params:{
                             clas:selectedClass,
