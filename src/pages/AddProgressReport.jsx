@@ -110,7 +110,7 @@ function AddProgressReport() {
     console.log(validateform());
     if(validateform()){
     try{
-        let { data } = await axios.post("http://localhost:8000/teacher/progressReport",
+        let { data } = await axios.post("https://hvs-backend.onrender.com/teacher/progressReport",
         {
             ...formData,
             email
