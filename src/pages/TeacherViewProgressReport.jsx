@@ -41,7 +41,7 @@ function TeacherViewProgressReport() {
 
     const fetchData = async()=>{
         try{
-            const { data } = await axios.get('http://localhost:8000/teacher/viewProgressReport',
+            const { data } = await axios.get('https://hvs-backend.onrender.com/teacher/viewProgressReport',
             {
                 params:{
                     studentid
@@ -128,7 +128,7 @@ function TeacherViewProgressReport() {
         }else{
           if(window.confirm(`Are you sure you want to delete Progress Report of '${studentid}' ?`)){
             try{
-              const { data } = await axios.delete(`http://localhost:8000/teacher/deleteProgressReport/${studentid}/${test_type}`,
+              const { data } = await axios.delete(`https://hvs-backend.onrender.com/teacher/deleteProgressReport/${studentid}/${test_type}`,
               {
                   withCredentials: true,
               }); 
