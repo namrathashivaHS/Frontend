@@ -55,7 +55,7 @@ function StudentUpdation() {
   const editData = async(e) => {
     try{
       console.log(formData);
-        let { data } = await axios.put(`http://localhost:8000/admin/editStudent/${id}`,{
+        let { data } = await axios.put(`https://hvs-backend.onrender.com/admin/editStudent/${id}`,{
             ...formData,
         },{withCredentials:true});
         const { success, message, ModifiedData, stu } = data;
