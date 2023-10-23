@@ -116,7 +116,7 @@ function StudentRegistration() {
     e.preventDefault();
     if(validateForm()){
     try{
-        let { data } = await axios.post("http://localhost:8000/admin/addStudent",{
+        let { data } = await axios.post("https://hvs-backend.onrender.com/admin/addStudent",{
             ...formData,
         },{withCredentials:true});
         const { success, message, num} = data;
