@@ -28,7 +28,7 @@ function ViewAdminAttendance() {
     const fetchAttendance=async()=>{
     if(cookies.jwt && user.role=="Admin"){
         try{
-                const { data } = await axios.get('http://localhost:8000/admin/viewAttendance',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewAttendance',
                 {
                     params:{
                         cls:selectedClass,
