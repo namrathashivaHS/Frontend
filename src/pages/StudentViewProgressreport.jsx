@@ -31,7 +31,7 @@ function StudentViewProgressReport() {
         const role = user.role;
        
         try{
-            const { data } = await axios.get('http://localhost:8000/student/viewProgressReport',
+            const { data } = await axios.get('https://hvs-backend.onrender.com/student/viewProgressReport',
             {
                 params:{
                     email,
