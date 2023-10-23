@@ -23,7 +23,7 @@ function AdminProfile () {
         const email=user.email;
         try {
             const { data } =await axios.get(
-                "http://localhost:8000/admin/profile",
+                "https://hvs-backend.onrender.com/admin/profile",
                 {
                   params:{
                     email:email,
