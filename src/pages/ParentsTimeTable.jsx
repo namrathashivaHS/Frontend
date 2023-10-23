@@ -31,7 +31,7 @@ function ParentsTimeTable() {
     //e.preventDefault();
     console.log(user.email);
     try{
-       const { data } = await axios.get("http://localhost:8000/parents/timeTable",
+       const { data } = await axios.get("https://hvs-backend.onrender.com/parents/timeTable",
        {
         params:{
             email:user.email,
