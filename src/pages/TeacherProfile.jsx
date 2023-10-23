@@ -22,7 +22,7 @@ function TeacherProfile () {
         const email=user.email;
         try {
             const { data } =await axios.get(
-                "http://localhost:8000/teacher/profile",
+                "https://hvs-backend.onrender.com/teacher/profile",
                 {
                   params:{
                     email:email,
