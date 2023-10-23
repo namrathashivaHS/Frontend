@@ -34,7 +34,7 @@ function StudentTimeTable() {
     //e.preventDefault();
     console.log(user.email);
     try{
-       const { data } = await axios.get("http://localhost:8000/student/timeTable",
+       const { data } = await axios.get("https://hvs-backend.onrender.com/student/timeTable",
        {
         params:{
             email:user.email,
