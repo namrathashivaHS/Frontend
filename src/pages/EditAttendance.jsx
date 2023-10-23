@@ -37,7 +37,7 @@ function EditAttendance() {
     const handleSubmit = async()=>{
       console.log(attData);
         try{
-            const { data } = await axios.put(`http://localhost:8000/teacher/editAttendance/${selectedClass}/${selectedDate}`,{
+            const { data } = await axios.put(`https://hvs-backend.onrender.com/teacher/editAttendance/${selectedClass}/${selectedDate}`,{
                 ...attData,
             });
             const {success, message, att, flag} = data;
