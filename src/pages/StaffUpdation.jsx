@@ -49,7 +49,7 @@ function StaffUpdation() {
   const editData = async(e) => {
     
     try{
-        let { data } = await axios.put(`http://localhost:8000/admin/editStaff/${id}`,{
+        let { data } = await axios.put(`https://hvs-backend.onrender.com/admin/editStaff/${id}`,{
             ...formData,
         },{withCredentials:true});
         const { success, message, ModifiedData, teach } = data;
