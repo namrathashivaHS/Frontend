@@ -23,7 +23,7 @@ function ParentsProfile () {
         const email=user.email;
         try {
             const { data } =await axios.get(
-                "http://localhost:8000/parents/profile",
+                "https://hvs-backend.onrender.com/parents/profile",
                 {
                   params:{
                     email:email,
