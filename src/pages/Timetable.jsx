@@ -61,7 +61,7 @@ function TimeTable() {
     e.preventDefault();
     if(validateForm()){
     try{
-       const { data } = await axios.post("http://localhost:8000/admin/addTimeTable",
+       const { data } = await axios.post("https://hvs-backend.onrender.com/admin/addTimeTable",
        {
         ...formData,
        },{withCredentials:true});
