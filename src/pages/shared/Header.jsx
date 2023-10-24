@@ -22,6 +22,7 @@ function Header({sendDataToParent}) {
         setUsername("");
         navigate('/login');
       }
+      console.log(cookies);
       const { data } = await axios.post(
         "https://hvs-backend.onrender.com/user",
         {cookies:cookies},
