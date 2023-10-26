@@ -15,7 +15,7 @@ function Header({sendDataToParent}) {
   //const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const userToken = Cookies.get('jwt');
+    //const userToken = Cookies.get('jwt');
     const verifyCookie = async () => {
       if (!cookies.jwt) {
       //if(!userToken){
