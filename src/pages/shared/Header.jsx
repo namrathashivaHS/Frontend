@@ -16,9 +16,11 @@ function Header({sendDataToParent}) {
 
   useEffect(() => {
     const verifyCookie = async () => {
-       if (!cookies.jwt) {
+      const token=sessionStorage.getItem('jwt');
+       if (!token) {
         //navigate("/signup");
-        removeCookie('jwt');
+        //removeCookie('jwt');
+        sessionStorage.removeItem('jwt');
         setUsername("");
         navigate('/login');
       }
