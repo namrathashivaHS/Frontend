@@ -25,12 +25,12 @@ function Header({sendDataToParent}) {
       console.log(data);
       sessionStorage.setItem("jwt",data.token);
       console.log(sessionStorage.getItem("jwt"));
-      //  if (!cookies.jwt) {
-      //   //navigate("/signup");
-      //   removeCookie('jwt');
-      //   setUsername("");
-      //   navigate('/login');
-      // }
+       if (!cookies.jwt) {
+        //navigate("/signup");
+        removeCookie('jwt');
+        setUsername("");
+        navigate('/login');
+      }
       if(status){
         const parts = data.user.email.split('@');
 
