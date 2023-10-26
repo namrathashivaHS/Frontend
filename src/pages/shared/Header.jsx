@@ -24,7 +24,8 @@ function Header({sendDataToParent}) {
       const { status, res } = data;
       console.log(data);
       sessionStorage.setItem("jwt",data.token);
-      console.log(sessionStorage.getItem("jwt"));
+      const sess=sessionStorage.getItem("jwt");
+      console.log(sess);
        if (!cookies.jwt) {
         //navigate("/signup");
         removeCookie('jwt');
