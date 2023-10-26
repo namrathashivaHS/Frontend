@@ -41,7 +41,6 @@ import ViewTimeTable from './pages/ViewTimeTable';
 import TeacherTimeTable from './pages/TeacherTimetable';
 import StudentTimeTable from './pages/StudentTimeTable';
 import ParentsTimeTable from './pages/ParentsTimeTable';
-import { cookiesProvider } from 'react-cookie';
 // import { socket } from './socket';
 // import { ConnectionState } from './components/ConnectionState';
 // import { ConnectionManager } from './components/ConnectionManager';
@@ -100,7 +99,6 @@ function App() {
 
 
   return (
-   <cookiesProvider>
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
@@ -160,7 +158,6 @@ function App() {
       <ConnectionManager />
       <MyForm /> */}
     </div>
-      </cookiesProvider>
   );
 }
 export default App;
