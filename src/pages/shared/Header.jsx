@@ -6,7 +6,7 @@ import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router';
 import { useCookies } from "react-cookie";
 import { ToastContainer, toast } from "react-toastify";
-//import Cookies from "js-cookie";
+
 
 function Header({sendDataToParent}) {
   const navigate=useNavigate();
@@ -16,22 +16,19 @@ function Header({sendDataToParent}) {
 
   useEffect(() => {
     const verifyCookie = async () => {
-      const { data } = await axios.post(
-        "https://hvs-backend.onrender.com/user",
-        {cookies:cookies},
-        { withCredentials: true }
-      );
-      const { status, res } = data;
-      console.log(data);
-      sessionStorage.setItem("jwt",data.token);
-      const sess=sessionStorage.getItem("jwt");
-      console.log(sess);
        if (!cookies.jwt) {
         //navigate("/signup");
         removeCookie('jwt');
         setUsername("");
         navigate('/login');
       }
+      const { data } = await axios.post(
+        "https://hvs-backend.onrender.com/user",
+        {cookies:cookies},
+        { withCredentials: true }
+      );
+      const { status, res } = data;
+      console.log(data);      
       if(status){
         const parts = data.user.email.split('@');
 
