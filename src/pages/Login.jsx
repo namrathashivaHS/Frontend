@@ -42,8 +42,7 @@ const Login = () => {
       );
       const { success, message } = data;
       sessionStorage.setItem('jwt',data.token);
-      const coo=sessionStorage.getItem('jwt');
-      console.log(coo);
+      
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
