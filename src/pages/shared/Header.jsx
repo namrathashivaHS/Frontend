@@ -63,8 +63,7 @@ function Header({sendDataToParent}) {
   function handleLogout(e){
     e.preventDefault();
     console.log("User Logged out Successfully");
-    //setCookie('jwt' + "=" + ' ' + ";" + 1 + ";path=/");
-    removeCookie('jwt');
+    sessionStorage.removeItem('jwt');
     setUsername("");
     navigate("/login");    
   }
