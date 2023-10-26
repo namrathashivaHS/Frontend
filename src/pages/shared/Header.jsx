@@ -15,17 +15,7 @@ function Header({sendDataToParent}) {
   //const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    //const userToken = Cookies.get('jwt');
     const verifyCookie = async () => {
-      if (!cookies.jwt) {
-      //if(!userToken){
-        //navigate("/signup");
-        removeCookie('jwt');
-        setUsername("");
-        navigate('/login');
-      }
-      console.log(cookies);
-      //console.log(userToken);
       const { data } = await axios.post(
         "https://hvs-backend.onrender.com/user",
         {cookies:cookies},
@@ -33,6 +23,14 @@ function Header({sendDataToParent}) {
       );
       const { status, res } = data;
       console.log(data);
+      sessionStorage.setItem("jwt",data.token);
+      console.log(sessionStorage.getItem("jwt"));
+      //  if (!cookies.jwt) {
+      //   //navigate("/signup");
+      //   removeCookie('jwt');
+      //   setUsername("");
+      //   navigate('/login');
+      // }
       if(status){
         const parts = data.user.email.split('@');
 
