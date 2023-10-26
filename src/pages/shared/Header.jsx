@@ -26,7 +26,7 @@ function Header({sendDataToParent}) {
       }
       const { data } = await axios.post(
         "https://hvs-backend.onrender.com/user",
-        {cookies:cookies},
+        {cookies:token},
         { withCredentials: true }
       );
       const { status, res } = data;
