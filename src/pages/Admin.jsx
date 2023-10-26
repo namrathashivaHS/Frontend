@@ -35,6 +35,7 @@ function Admin() {
   const [user, setChildData] = useState('');
   const receiveDataFromChild = (user) => {
     const token = sessionStorage.getItem('jwt');
+    console.log(user,token);
     setChildData(user);
     if(token && user.role=="Admin"){
         console.log("Authorized as Admin");
