@@ -46,7 +46,7 @@ function Header({sendDataToParent}) {
         navigate('/');
         sendDataToParent(data.user);
       }else{
-        removeCookie('jwt');
+        sessionStorage.removeItem('jwt');
         navigate('/login');
       }
     };
