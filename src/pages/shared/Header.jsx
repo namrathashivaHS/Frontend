@@ -64,7 +64,8 @@ function Header({sendDataToParent}) {
     e.preventDefault();
     console.log("User Logged out Successfully");
     sessionStorage.removeItem('jwt');
-    console.log(sessionStorage.getItem('jwt'));
+    const temp=sessionStorage.getItem('jwt');
+    console.log(temp);
     setUsername("");
     navigate("/login");    
   }
