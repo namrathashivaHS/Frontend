@@ -13,13 +13,14 @@ function AdminProfile () {
     const [cookies,removeCookie] = useCookies([]);
     const [admin,setAdmin] = useState("");
     const receiveDataFromChild = (user) => {
+    const token = sessionStorage.getItem('jwt');
     // Update the parent component's state with the received data
     setChildData(user);
     //console.log(user,"good");
     navigate('/admin/profile');
     
     const verifyUser = async () =>{
-    if(cookies.jwt && user.role==="Admin"){
+    if(token && user.role==="Admin"){
         const email=user.email;
         try {
             const { data } =await axios.get(
