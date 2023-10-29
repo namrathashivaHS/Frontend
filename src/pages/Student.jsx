@@ -11,9 +11,10 @@ function Student() {
 
   const [user, setChildData] = useState('');
   const receiveDataFromChild = (user) => {
+      const token = sessionStorage.getItem('jwt');
       // Update the parent component's state with the received data
       setChildData(user);
-      if(cookies.jwt && user.role=="Student"){
+      if(token && user.role=="Student"){
           console.log("Authorized as Student");
           navigate("/student");
         }else{
