@@ -19,7 +19,8 @@ function ParentsProfile () {
     navigate('/parents/profile');
     
     const verifyUser = async () =>{
-    if(cookies.jwt && user.role==="Parents"){
+         const token = sessionStorage.getItem('jwt');
+    if(token && user.role==="Parents"){
         const email=user.email;
         try {
             const { data } =await axios.get(
