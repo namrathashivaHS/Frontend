@@ -136,9 +136,10 @@ function StudentRegistration() {
 
   const [user, setChildData] = useState('');
   const receiveDataFromChild = (user) => {
+     const token = sessionStorage.getItem('jwt');
     // Update the parent component's state with the received data
     setChildData(user);
-    if(cookies.jwt && user.role=="Admin"){
+    if(token && user.role=="Admin"){
         navigate("/admin/addStudent");
       }else{
         navigate("/login");
