@@ -13,11 +13,12 @@ function StudentAttendance() {
     const navigate=useNavigate();
     const [cookies,removeCookie] = useCookies([]);
     const receiveDataFromChild = async(user) => {
+         const token = sessionStorage.getItem('jwt');
         // Update the parent component's state with the received data
         setChildData(user);
         navigate('/student/attendance');
         
-    if(cookies.jwt && user.role=="Student"){
+    if(token && user.role=="Student"){
         const email=user.email;
         console.log(email);
         try{
