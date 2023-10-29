@@ -27,10 +27,9 @@ function TeacherViewProgressReport() {
     const navigate=useNavigate();
     const [cookies,removeCookie] = useCookies([]);
     const receiveDataFromChild = async(user) => {
+         const token = sessionStorage.getItem('jwt');
         // Update the parent component's state with the received data
-        
-        
-    if(cookies.jwt && user.role=="Teacher"){
+    if(token && user.role=="Teacher"){
         setChildData(user);
         navigate('/teacher/viewProgressReport');
 
