@@ -19,8 +19,8 @@ function ViewAttendance() {
         // Update the parent component's state with the received data
         setChildData(user);
         navigate('/parents/attendance');
-        
-    if(cookies.jwt && user.role=="Parents"){
+         const token = sessionStorage.getItem('jwt');
+    if(token && user.role=="Parents"){
         try{
                 const { data } = await axios.get('https://hvs-backend.onrender.com/parents/attendance',
                 {
