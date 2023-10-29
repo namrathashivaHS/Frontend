@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+The Project is School Management System.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this Project we have four user sets Admin,Teacher,Student and Parents.
 
-## Available Scripts
+The Admin has universal access and can add, delete and modify Students, Staffs, Parents and Timetable.
 
-In the project directory, you can run:
+The Teacher can mark Attendance and prepare Progress report and can modify the same on need basis.
 
-### `yarn start`
+The Student can view his/her Attendance and Progress Report.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Parents can also view their children Attendance and Progress Report.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Each category of user has a separate login and profile.
 
-### `yarn test`
+Their is only One Admin and only admin has rights to create any other category of user the other users can view only About page only without getting an account created.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When Admin add any user (Student,Teacher and Parents) their password is automatically generated and once the user logged in they can change it with forgot password option.
 
-### `yarn build`
+password created for the users based on this logic:-Student:-starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character class of that student twice for example if the email is smitha@gmail.com and this student studing in 10th then the password is Smit@1010.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Teacher:- starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character and then the first 4 characters of the mobile number for example if the teacher email id is mamatha@gmail.com then mobile number is 1234567890 then the password is Mama@1234
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Parents:- the password criteria for parents is same as the teachers first 4 email characters 1st cahracter is uppercase then '@' the first four characters from the mobile numbetr.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Admin Credentials,
+email:-Dudu@gmail.com,
+password:-Bubu@1234
 
-### `yarn eject`
+Teacher Credentials,
+email:-mamatha@gmail.com,
+password:-Mama@1234
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Student Credentials,
+email:-smitha@gmail.com,
+password:-Smit@1010
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Parents Credentials,
+email:-ramachandra@gmail.com,
+password:-Rama21234
