@@ -16,7 +16,9 @@ Their is only One Admin and only admin has rights to create any other category o
 
 When Admin add any user (Student,Teacher and Parents) their password is automatically generated and once the user logged in they can change it with forgot password option.
 
-password created for the users based on this logic:-Student:-starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character class of that student twice for example if the email is smitha@gmail.com and this student studing in 10th then the password is Smit@1010.
+password created for the users based on this logic:-
+
+Student:-starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character class of that student twice for example if the email is smitha@gmail.com and this student studing in 10th then the password is Smit@1010.
 
 Teacher:- starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character and then the first 4 characters of the mobile number for example if the teacher email id is mamatha@gmail.com then mobile number is 1234567890 then the password is Mama@1234
 
@@ -36,4 +38,4 @@ password:-Smit@1010
 
 Parents Credentials,
 email:-ramachandra@gmail.com,
-password:-Rama21234
+password:-Rama@1234
