@@ -32,8 +32,9 @@ function Chat () {
     const [groupChatId,setGroupChatId] = useState("");
     const [groupNameModify, setGroupNameModify] = useState("");
     const receiveDataFromChild = (user) => {
+         const token = sessionStorage.getItem('jwt');
     // Update the parent component's state with the received data
-        if(cookies.jwt && (user.role=="Admin" || user.role=="Teacher" || user.role=="Parents" || user.role=="Student")){
+        if(token && (user.role=="Admin" || user.role=="Teacher" || user.role=="Parents" || user.role=="Student")){
             setChildData(user);
             setEmail(user.email);
             setRole(user.role);
