@@ -12,8 +12,9 @@ function Resource () {
     const [cookies,removeCookie] = useCookies([]);
     const [Role,setRole] = useState("");
     const receiveDataFromChild = (user) => {
+         const token = sessionStorage.getItem('jwt');
     // Update the parent component's state with the received data
-        if(cookies.jwt&&user.role=="Admin"){
+        if(token && user.role=="Admin"){
             setChildData(user);
             setRole(user.role);
             console.log(Role)
