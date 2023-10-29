@@ -12,7 +12,7 @@ function About(){
   
 return(
     <>
-    <div>
+    <div class="about">
         <p>
             <h3>About Hema Vidya Sangha</h3>
             <p>
