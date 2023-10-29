@@ -826,6 +826,10 @@ i{
   margin-right:10px;
 }
 
+.about{
+    color:white;
+}
+
 footer{
   display: flex;
   text-align: center;
