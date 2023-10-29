@@ -22,10 +22,11 @@ function ParentsViewProgressReport() {
     const navigate=useNavigate();
     const [cookies,removeCookie] = useCookies([]);
     const receiveDataFromChild = async(user) => {
+         const token = sessionStorage.getItem('jwt');
         // Update the parent component's state with the received data
         setChildData(user);
         navigate('/parents/viewProgressReport');
-    if(cookies.jwt && user.role=="Parents"){
+    if(token && user.role=="Parents"){
         
         const email = user.email;
         const role = user.role;
