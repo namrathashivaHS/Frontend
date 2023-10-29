@@ -22,9 +22,10 @@ function EditAttendance() {
     const navigate=useNavigate();
     const [cookies,removeCookie] = useCookies([]);
     const receiveDataFromChild = async(user) => {
+         const token = sessionStorage.getItem('jwt');
         // Update the parent component's state with the received data
         setChildData(user);
-        if(cookies.jwt && user.role=="Teacher"){
+        if(token && user.role=="Teacher"){
           // console.log(selectedClass,selectedDate);
           navigate(`/teacher/editAttendance/${selectedClass}/${selectedDate}`);
           handleSubmit();
