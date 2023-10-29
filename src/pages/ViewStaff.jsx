@@ -15,11 +15,12 @@ function ViewStaff() {
     const navigate=useNavigate();
     const [cookies,removeCookie] = useCookies([]);
     const receiveDataFromChild = async(user) => {
+         const token = sessionStorage.getItem('jwt');
         // Update the parent component's state with the received data
         setChildData(user);
         navigate('/admin/viewStaff');
         
-    if(cookies.jwt && user.role=="Admin"){
+    if(token && user.role=="Admin"){
         try{
                 const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewStaff',
                 {
