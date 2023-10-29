@@ -20,7 +20,7 @@ password created for the users based on this logic:-Student:-starting 4 characte
 
 Teacher:- starting 4 characters from the email in that first character is uppercase and rest 3 characters are in lowercase and then '@' character and then the first 4 characters of the mobile number for example if the teacher email id is mamatha@gmail.com then mobile number is 1234567890 then the password is Mama@1234
 
-Parents:- the password criteria for parents is same as the teachers first 4 email characters 1st cahracter is uppercase then '@' the first four characters from the mobile numbetr.
+Parents:- the password criteria for parents is same as the teachers first 4 email characters 1st cahracter is uppercase then '@' the first four characters from the mobile number.
 
 Admin Credentials,
 email:-Dudu@gmail.com,
