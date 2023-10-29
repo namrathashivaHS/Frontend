@@ -18,7 +18,8 @@ function TeacherProfile () {
     navigate('/teacher/profile');
     
     const verifyUser = async () =>{
-    if(cookies.jwt && user.role==="Teacher"){
+         const token = sessionStorage.getItem('jwt');
+    if(token && user.role==="Teacher"){
         const email=user.email;
         try {
             const { data } =await axios.get(
