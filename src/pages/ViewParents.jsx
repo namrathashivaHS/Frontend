@@ -20,8 +20,8 @@ function ViewParents() {
         // Update the parent component's state with the received data
         setChildData(user);
         navigate('/admin/viewParents');
-        
-    if(cookies.jwt && user.role=="Admin"){
+         const token = sessionStorage.getItem('jwt');
+    if(token && user.role=="Admin"){
         try{
                 const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewParents',
                 {
