@@ -591,6 +591,7 @@ table{
 
 .flexlayout.fx{
   flex-direction: column;
+   height: 100vh;
 }
  .viewRoomLabel{
   margin-top:10px;
