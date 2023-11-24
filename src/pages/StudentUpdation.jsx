@@ -78,7 +78,7 @@ function StudentUpdation() {
     editData();
   }
   const [user, setChildData] = useState('');
-  const receiveDataFromChild = (user) => {
+  const receiveDataFromChild = async(user) => {
      const token = sessionStorage.getItem('jwt');
     // Update the parent component's state with the received data
     setChildData(user);
