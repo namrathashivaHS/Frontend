@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 
 function StudentUpdation() {
   const [ errorMessage, seterrorMessage ] = useState('');
+  const [staffData,setStaffData] = useState([]);
   const navigate=useNavigate();
   const [cookies,removeCookie] = useCookies([]);
   const { id } = useParams();
@@ -83,6 +84,23 @@ function StudentUpdation() {
     setChildData(user);
     if(token && user.role=="Admin"){
         navigate(`/admin/editStudent/${ id }`);
+        try{
+                const { data } = await axios.get('http://localhost:8000/admin/viewStaff',
+                {
+                    withCredentials: true,
+                }); 
+                const { success, message, staData } = data;
+            if(success){
+                setStaffData(staData);
+            }
+            else{
+                navigate(`/admin/editStudent/${ id }`);
+            }
+
+        }catch(error){
+            console.log(error.message);
+            navigate('/admin');
+            } 
         editData();
       }else{
         navigate("/login");
@@ -228,14 +246,12 @@ function StudentUpdation() {
       />
 
       <label htmlFor="class_teacher_id">Class Teacher ID</label>
-      <input
-        type="text"
-        id="class_teacher_id"
-        name="class_teacher_id"
-        value={formData.class_teacher_id}
-        onChange={handleChange}
-        autoComplete="off"
-      />
+      <select name="class_teacher_id" value={formData.class_teacher_id} onChange={handleChange} className="custom-select" id="stuclass">
+          <option value=""></option>
+          {staffData.map((item) => (
+            <option value={item.emp_id}>{item.emp_id}-{item.first_name} {item.last_name}</option>
+          ))}
+        </select>
 
       <label htmlFor="email">Email</label>
       <input
