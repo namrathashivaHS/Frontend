@@ -85,7 +85,7 @@ function StudentUpdation() {
     if(token && user.role=="Admin"){
         navigate(`/admin/editStudent/${ id }`);
         try{
-                const { data } = await axios.get('http://localhost:8000/admin/viewStaff',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewStaff',
                 {
                     withCredentials: true,
                 }); 
