@@ -157,7 +157,7 @@ function StudentRegistration() {
 
         }catch(error){
             console.log(error.message);
-            navigate('/admin');
+            navigate('/admin/addStudent');
             } 
       }else{
         navigate("/login");
