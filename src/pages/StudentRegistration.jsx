@@ -143,7 +143,7 @@ function StudentRegistration() {
     if(token && user.role=="Admin"){
        navigate("/admin/addStudent");
        try{
-                const { data } = await axios.get('http://localhost:8000/admin/viewStaff',
+                const { data } = await axios.get('https://hvs-backend.onrender.com/admin/viewStaff',
                 {
                     withCredentials: true,
                 }); 
