@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router';
 function StudentRegistration() {
   const [ errorMessage, seterrorMessage ] = useState('');
   const [error,setError]=useState('');
+  const [staffData,setStaffData] = useState([]);
   const navigate=useNavigate();
   const [cookies,removeCookie] = useCookies([]);
   const initialdata={
@@ -140,7 +141,24 @@ function StudentRegistration() {
     // Update the parent component's state with the received data
     setChildData(user);
     if(token && user.role=="Admin"){
-        navigate("/admin/addStudent");
+       navigate("/admin/addStudent");
+       try{
+                const { data } = await axios.get('http://localhost:8000/admin/viewStaff',
+                {
+                    withCredentials: true,
+                }); 
+                const { success, message, staData } = data;
+            if(success){
+                setStaffData(staData);
+            }
+            else{
+                navigate('/admin/addStudent');
+            }
+
+        }catch(error){
+            console.log(error.message);
+            navigate('/admin');
+            } 
       }else{
         navigate("/login");
       }
@@ -267,14 +285,12 @@ function StudentRegistration() {
       />
       
       <label htmlFor="class_teacher_id">Class Teacher ID</label>
-      <input
-        type="text"
-        id="class_teacher_id"
-        name="class_teacher_id"
-        value={formData.class_teacher_id}
-        onChange={handleChange}
-        autoComplete="off"
-      />
+       <select name="class_teacher_id" value={formData.class_teacher_id} onChange={handleChange} className="custom-select" id="stuclass">
+          <option value=""></option>
+          {staffData.map((item) => (
+            <option value={item.emp_id}>{item.emp_id}-{item.first_name} {item.last_name}</option>
+          ))}
+        </select>
 
       <label htmlFor="email">Email</label>
       <input
