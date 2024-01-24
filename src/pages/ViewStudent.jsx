@@ -65,7 +65,7 @@ function ViewStudent() {
 
         if(success){
          alert(message+' '+'with ID :'+' '+delData.roll_no);
-         navigate('/admin/viewStudnet');
+         //navigate('/admin/viewStudnet');
         }
 
       }catch(error){
