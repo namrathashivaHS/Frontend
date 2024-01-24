@@ -47,13 +47,13 @@ function ViewStudent() {
     }
     //const link = getElementById("edit");
     function handleEdit( item ){
-      e.preventDefault();
+      //e.preventDefault();
       let id = item.roll_no;
       navigate(`/admin/editStudent/${ id }`);
     };
 
-    const handleDelete = async( item )=>{
-      //e.preventDefault();
+    const handleDelete = async( item, e )=>{
+      e.preventDefault();
       //if(window.confirm('Are you sure you want to delete Student '+item.first_name+' ?')){
       let id = item.roll_no;
       try{
@@ -125,7 +125,7 @@ function ViewStudent() {
             <td>{item.percentage}</td> : 
             <td> - </td>}
             <td><a href="" onClick={()=>handleEdit(item)} ><FontAwesomeIcon icon={faEdit} className="edit-icon"/></a></td>
-            <td><a href="" onClick={()=>handleDelete(item)}><FontAwesomeIcon icon={faTrash} /></a></td>
+            <td><a href="" onClick={(e)=>handleDelete(item,e)}><FontAwesomeIcon icon={faTrash} /></a></td>
           </tr>
         ))}
       </tbody>
