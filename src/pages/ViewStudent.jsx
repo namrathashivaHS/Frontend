@@ -66,6 +66,7 @@ function ViewStudent() {
         if(success){
          alert(message+' '+'with ID :'+' '+delData.roll_no);
          navigate('/admin/viewStudent');
+         window.location.reload();
         }
 
       }catch(error){
