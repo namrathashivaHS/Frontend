@@ -47,7 +47,7 @@ function ViewStudent() {
     }
     //const link = getElementById("edit");
     function handleEdit( item ){
-      //e.preventDefault();
+      e.preventDefault();
       let id = item.roll_no;
       navigate(`/admin/editStudent/${ id }`);
     };
