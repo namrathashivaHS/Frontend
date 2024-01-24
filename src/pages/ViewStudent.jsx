@@ -54,7 +54,7 @@ function ViewStudent() {
 
     const handleDelete = async( item, e )=>{
       e.preventDefault();
-      //if(window.confirm('Are you sure you want to delete Student '+item.first_name+' ?')){
+      if(window.confirm('Are you sure you want to delete Student '+item.first_name+' ?')){
       let id = item.roll_no;
       try{
         const { data } = await axios.delete(`https://hvs-backend.onrender.com/admin/deleteStudent/${id}`,
@@ -72,7 +72,7 @@ function ViewStudent() {
         setMessage(error.message);
         //navigate('/admin/viewStudent');
       }
-    //}
+    }
     }
 
   return (
