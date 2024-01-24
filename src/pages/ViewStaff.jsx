@@ -50,8 +50,8 @@ function ViewStaff() {
       navigate(`/admin/editStaff/${ id }`);
     };
 
-    const handleDelete = async( item )=>{
-      //e.preventDefault();
+    const handleDelete = async( item, e )=>{
+      e.preventDefault();
       if(window.confirm('Are you sure you want to delete Staff '+item.first_name+' ?')){
       let id = item.emp_id;
       try{
@@ -64,6 +64,7 @@ function ViewStaff() {
         if(success){
          alert(message+' '+'with ID :'+' '+delData.emp_id);
          navigate('/admin/viewStaff');
+         window.location.reload();
         }
 
       }catch(error){
@@ -113,7 +114,7 @@ function ViewStaff() {
             <td>{item.mob_num}</td>
             <td>{item.address}</td>
             <td><a href=""  onClick={()=>handleEdit(item)}><FontAwesomeIcon icon={faEdit} /></a></td>
-            <td><a href="" onClick={()=>handleDelete(item)}><FontAwesomeIcon icon={faTrash} /></a></td>
+            <td><a href="" onClick={(e)=>handleDelete(item,e)}><FontAwesomeIcon icon={faTrash} /></a></td>
           </tr>
         ))}
       </tbody>
