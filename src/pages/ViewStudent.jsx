@@ -70,7 +70,7 @@ function ViewStudent() {
 
       }catch(error){
         setMessage(error.message);
-        navigate('/admin/viewStudent');
+        //navigate('/admin/viewStudent');
       }
     }
     }
