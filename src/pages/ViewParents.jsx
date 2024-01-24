@@ -51,8 +51,8 @@ function ViewParents() {
       navigate(`/admin/editParents/${ id }`);
     };
 
-    const handleDelete = async( item )=>{
-      //e.preventDefault();
+    const handleDelete = async( item, e )=>{
+      e.preventDefault();
       if(window.confirm('Are you sure you want to delete Parents '+item.first_name+' '+item.last_name+' ?')){
       let id = item._id;
       try{
@@ -65,6 +65,7 @@ function ViewParents() {
         if(success){
          alert(message+' '+delData.first_name+' '+delData.last_name);
          navigate('/admin/viewParents');
+         window.location.reload();
         }
 
       }catch(error){
@@ -104,7 +105,7 @@ function ViewParents() {
             <td>{item.mob_num}</td>
             <td>{item.address}</td>
             <td><a href="" onClick={()=>handleEdit(item)}><FontAwesomeIcon icon={faEdit} /></a></td>
-            <td><a href="" onClick={()=>handleDelete(item)}><FontAwesomeIcon icon={faTrash} /></a></td>
+            <td><a href="" onClick={(e)=>handleDelete(item)}><FontAwesomeIcon icon={faTrash} /></a></td>
           </tr>
         ))}
       </tbody>
