@@ -105,7 +105,7 @@ function ViewParents() {
             <td>{item.mob_num}</td>
             <td>{item.address}</td>
             <td><a href="" onClick={()=>handleEdit(item)}><FontAwesomeIcon icon={faEdit} /></a></td>
-            <td><a href="" onClick={(e)=>handleDelete(item)}><FontAwesomeIcon icon={faTrash} /></a></td>
+            <td><a href="" onClick={(e)=>handleDelete(item,e)}><FontAwesomeIcon icon={faTrash} /></a></td>
           </tr>
         ))}
       </tbody>
