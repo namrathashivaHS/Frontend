@@ -56,7 +56,7 @@ function ViewParents() {
       if(window.confirm('Are you sure you want to delete Parents '+item.first_name+' '+item.last_name+' ?')){
       let id = item._id;
       try{
-        const { data } = await axios.delete(`http://localhost:8000/admin/deleteParents/${id}`,
+        const { data } = await axios.delete(`https://hvs-backend.onrender.com/admin/deleteParents/${id}`,
         {
             withCredentials: true,
         }); 
