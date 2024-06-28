@@ -16,7 +16,7 @@ Their is only One Admin and only admin has rights to create any other category o
 
 When Admin add any user (Student,Teacher and Parents) their password is automatically generated and once the user logged in they can change it with forgot password option.
 
-Deployment URL:- https://hvs-frontend.onrender.com/login
+Deployment URL:- https://hvs-frontend.onrender.com
 
 password created for the users based on this logic:-
 
