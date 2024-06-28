@@ -23,7 +23,7 @@ function Home() {
       <header>
       <div className="home_page">
         <h2  class="head hema">
-          Hema VIDYA SANGHA
+          HEMA VIDYA SANGHA
         </h2>
       </div>
       <div class="view">
