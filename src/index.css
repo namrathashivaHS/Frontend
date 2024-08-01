@@ -16,7 +16,12 @@ h1, h2, h3, h4, ul, li, a, p, input, label, button, div{
     font-family: 'Quicksand', sans-serif;
     color: #444;
 }
-
+.password-toggle-icon{
+  position: relative;
+  left: 490px;
+  top: -35px;
+  cursor: pointer;
+}
 footer{
     margin: 0;
     padding: 0;
