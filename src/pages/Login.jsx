@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
+import usePasswordToggle from "./shared/ToggelEyeHook";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Login = () => {
     password: "",
   });
   const { email, password } = inputValue;
+  const [PasswordInputType,ToggleEyeIcon] = usePasswordToggle();
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setInputValue({
@@ -94,12 +96,13 @@ const Login = () => {
         <div>
           <label htmlFor="password">Password</label>
           <input
-            type="password"
+            type={PasswordInputType}
             name="password"
             value={password}
             placeholder="Enter your password"
             onChange={handleOnChange}
           />
+          <span className="password-toggle-icon">{ToggleEyeIcon}</span>
           <div ><a href="/changePassword">Forgot password?</a></div>
         </div>
         <button type="submit">Login</button>
